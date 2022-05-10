@@ -20,3 +20,19 @@ Then run the app.js file
 Use the website at 
 
 http://localhost:3000
+
+Some Images of the website
+
+Case Informtation Page (Only seen by officers)
+
+![Case Information](https://github.com/TejasParse/anonymous-eye/blob/master/public/images/caseInformation.jpg?raw=true)
+
+
+Complaint Form (Seen by anyone)
+
+![Complaint Form](https://github.com/TejasParse/anonymous-eye/blob/master/public/images/complaintForm.jpg?raw=true)
+
+
+Dashboard (Only seen by officers)
+
+![Dashboard](https://github.com/TejasParse/anonymous-eye/blob/master/public/images/dashboard.jpg?raw=true)
