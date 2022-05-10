@@ -1,5 +1,7 @@
 ## Anonymous Eye
 
+People even now are still scared to complain about the crime happening to them or others in a police station. That's when i came up to this solution. Many state police websites do not have this feature to allow users to complaint anonymously so i choose to make this website.
+
 This website will allow anyone to report about any crime happening to them or near by without tracking any information about the user
 
 As a police officer you can Go Through the cases
