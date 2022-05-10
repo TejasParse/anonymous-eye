@@ -38,6 +38,10 @@ const ComplaintSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    crimeCity: {
+        type: String,
+        required: true
+    },
     crimeState: {
         type: String,
         required: true

@@ -46,10 +46,11 @@
     <% complaints.forEach(element => { %>
         <div class="container bg-white mt-4 p-2">
             <h2><%= element.crimeDescription.substring(0,80)+"..." %></h2>
-            <p><%= element.crimeAddress %></p>
-            <p><%= element.crimeState %></p>
-            <p><%= element.crimeDate.toDateString() %></p>
-            <p>Case Taken By (For Collaboration): 
+            <p class="mb-1"><%= element.crimeAddress %></p>
+            <p class="mb-1"><%= element.crimeCity %></p>
+            <p class="mb-1"><%= element.crimeState %></p>
+            <p class="mb-1"><%= element.crimeDate.toDateString() %></p>
+            <p class="mb-1">Case Taken By (For Collaboration): 
 
                 <ul>
                     <% element.casetaken.forEach(element1 => { %>
