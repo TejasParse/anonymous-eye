@@ -36,7 +36,13 @@ const PoliceSchema = new mongoose.Schema({
     districtAssigned: {
         type: String,
         required: true
-    }
+    },
+    takenIds: [
+        {
+            type: mongoose.SchemaTypes.ObjectId,
+            ref: "Complaint"
+        }
+    ]
 });
 
 const Police = new mongoose.model("Police",PoliceSchema);

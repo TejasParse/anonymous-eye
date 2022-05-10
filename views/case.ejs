@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Details</title>
+
+    <%- include("partials/topImports")  %> 
+
+
+</head>
+<body class="bg-dark">
+    
+    <%- include("partials/navbar")  %>
+    <%- include("partials/successFlash")  %>
+    <%- include("partials/failFlash")  %>
+
+
+    <div class="container bg-white mt-5 p-2 mb-5">
+        <h1 class="text-center">Case Information</h1>
+        <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2">
+                <h3 class="text-center">Suspect Image</h3>
+                <img src="/images/empty_profile.webp" alt="Image" width="100%">
+            </div>
+            <div class="col-5"></div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-6">
+                <h3>User Name: <%= data.userName%></h3>
+                <p>User Phone: <%= data.userPhone%></p>
+                <p>User Address: <%= data.userAddress%></p>
+            </div>
+            <div class="col-6">
+                <h3>Suspect Name: <%= data.suspectName%></h3>
+                <p>Suspect Phone: <%= data.suspectPhone%></p>
+                <p>Suspect Address: <%= data.suspectAddress%></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center">Details About the Crime</h2>
+                <h4>Crime Description</h4>
+                <p><%= data.crimeDescription%></p>
+                <h4>Crime Location</h4>
+                <p><%= data.crimeAddress%></p>
+                <h4>Crime State</h4>
+                <p><%= data.crimeState%></p>
+                <h4>Date of the Crime</h4>
+                <p><%= data.crimeDate.toDateString()%></p>
+            </div>
+        </div>
+
+        
+        <p class="mt-3">Case Taken By (For Collaboration Purposes): 
+            
+            <ul>
+                <% data.casetaken.forEach(element1 => { %>
+                    <li><%= element1.name%></li>
+                <% }) %>
+            </ul>
+                
+        </p>
+            
+        <% if (data.solved) { %>
+                
+            <button class="btn btn-success disabled">Case Solved!</button>
+
+        <% } else { %>
+
+            <% if (taken.includes(data._id)) { %>
+                <a href="">
+                    <button class="btn btn-primary disabled"> Case Taken Up By You </button>
+                </a>
+                <a href="/solved/<%= data._id %>">
+                    <button class="btn btn-success">Solved The Case!</button>
+                </a>
+            <% } else { %>
+                <a href="/takeupcase?id=<%=data._id%>">
+                    <button class="btn btn-primary"> Take Up Case </button>
+                </a>
+            <% } %>
+
+        <% }  %> 
+    </div>
+
+
+    <%- include("partials/bottomImports")  %>
+
+</body>
+</html>

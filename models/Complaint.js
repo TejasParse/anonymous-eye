@@ -45,7 +45,15 @@ const ComplaintSchema = new mongoose.Schema({
     crimeDate: {
         type: Date,
         required: true
-    }
+    },
+    solved: {
+        type: Number,
+        default:0
+    },
+    casetaken: [ {
+        type: mongoose.Types.ObjectId,
+        ref: "Police"
+     }]
 });
 
 const Complaint = new mongoose.model("Complaint",ComplaintSchema);

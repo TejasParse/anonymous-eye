@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <%- include("partials/topImports")  %> 
+
+</head>
+<body class="bg-dark">
+    
+    <%- include("partials/navbar")  %>
+    <%- include("partials/successFlash")  %>
+    <%- include("partials/failFlash")  %>
+
+
+    <div class="container">
+        <h1 class="text-white mt-3">Complaints</h1>
+
+        <form action="/dashboard" novalidate method="get" class="row mt-4 needs-validation">
+
+            <div class="col-3">
+                <select class="form-select" aria-label="Default select example" name="state" id="state" required>
+                    <option selected disabled value="">Filter State</option>
+                    <% states.forEach(element => { %>
+                        <option value="<%= element %>"> <%= element %> </option>
+                    <% }) %>
+                    
+                </select>
+                <div class="invalid-feedback">
+                    Please select a valid state.
+                </div>
+
+            </div>
+
+            <div class="col-3">
+                <input type="submit" value="Filter" class="btn btn-primary">
+            </div>
+
+        </form>
+
+    </div>
+
+    <% complaints.forEach(element => { %>
+        <div class="container bg-white mt-4 p-2">
+            <h2><%= element.crimeDescription.substring(0,80)+"..." %></h2>
+            <p><%= element.crimeAddress %></p>
+            <p><%= element.crimeState %></p>
+            <p><%= element.crimeDate.toDateString() %></p>
+            <p>Case Taken By (For Collaboration): 
+
+                <ul>
+                    <% element.casetaken.forEach(element1 => { %>
+                        <li><%= element1.name%></li>
+                    <% }) %>
+                </ul>
+
+            </p>
+
+            <% if (element.solved) { %>
+                
+                <button class="btn btn-success disabled">Case Solved!</button>
+
+            <% } else { %>
+
+                <% if (taken.includes(element._id)) { %>
+                    <a href="">
+                        <button class="btn btn-primary disabled"> Case Taken Up By You </button>
+                    </a>
+                    <a href="/solved/<%= element._id %>">
+                        <button class="btn btn-success">Solved The Case!</button>
+                    </a>
+                <% } else { %>
+                    <a href="/takeupcase?id=<%=element._id%>">
+                        <button class="btn btn-primary"> Take Up Case </button>
+                    </a>
+                <% } %>
+
+            <% }  %> 
+
+
+            <a href="/Case/<%=element._id%>">
+                <button class="btn btn-primary">Read More</button>
+            </a>
+        </div>
+    <% }) %>
+
+    <% if (complaints.length==0) { %>
+        <div class="container mt-4">
+            <h2 class="text-white">No Cases Found</h2>
+        </div>
+    <% } %>
+
+
+    <%- include("partials/bottomImports")  %>
+
+</body>
+</html>

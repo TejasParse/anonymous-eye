@@ -73,7 +73,7 @@
 
             <div class="col-12">
                 <div class="input-group mb-3">
-                    <label class="input-group-text" for="inputGroupFile01">Upload Image if any</label>
+                    <label class="input-group-text" for="inputGroupFile01">Upload Image of suspect if any</label>
                     <input type="file" class="form-control" id="inputGroupFile01" name="suspectImage">
                 </div>
 
@@ -110,14 +110,14 @@
 
                 </div>
 
-                <div class="g-recaptcha mb-3" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
-
                 <div class="mb-3">
                     <label for="crimeDate" class="form-label">Date of the crime</label>
                     <div class="input-group date" id="datepicker">
                         <input type="date" class="form-control" id="crimeDate" name="crimeDate"/>
                     </div>
                 </div>
+                <div class="g-recaptcha mb-3" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark"></div>
+
 
             </div>
             
@@ -132,28 +132,6 @@
 
     <%- include("partials/bottomImports")  %>
 
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-            })
-        })()
-    </script>
 
 </body>
 </html>
