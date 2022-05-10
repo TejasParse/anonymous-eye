@@ -33,6 +33,6 @@ Complaint Form (Seen by anyone)
 ![Complaint Form](https://github.com/TejasParse/anonymous-eye/blob/master/public/images/complaintForm.jpg?raw=true)
 
 
-Dashboard (Only seen by officers)
+Dashboard (Only seen by officers) You can also see the 3 states of a complaint. Also multiple officers can take up a case
 
 ![Dashboard](https://github.com/TejasParse/anonymous-eye/blob/master/public/images/dashboard.jpg?raw=true)
