@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <%- include("partials/topImports")  %> 
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+<body class="bg-dark">
+    
+    <%- include("partials/navbar")  %>
+    <%- include("partials/successFlash")  %>
+    <%- include("partials/failFlash")  %>
+    
+
+
+    <div class="container text-white mt-2">
+        <h1 class="text-center">&#9733;&#9733;&#9733; Our Services &#9733;&#9733;&#9733;</h1>
+
+        <div class="row">
+            <div class="col-12">
+
+                <a href="/complaint">
+
+                    <i class="bi bi-pencil-square" style="font-size: 2.5vw;"></i>
+                    <h2 class="d-inline">Lodge a Complaint</h2>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <%- include("partials/bottomImports")  %>
+
+</body>
+</html>
